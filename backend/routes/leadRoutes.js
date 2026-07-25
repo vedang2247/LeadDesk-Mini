@@ -4,7 +4,6 @@ const checkforAuthentication = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-// 1. Create a Lead (Public Route)
 router.post('/', async (req, res) => {
     try {
         const { name, email, budgetRange, message } = req.body;
