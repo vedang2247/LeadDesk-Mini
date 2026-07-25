@@ -42,7 +42,7 @@ function App() {
 
         {/* Global Footer */}
         <footer className="w-full border-t border-slate-200 py-4 text-center text-xs text-slate-500 bg-white">
-          © 2025 LeadDesk Mini CRM. Securely encrypted. Designed for professional SaaS lead management.
+          Built for Digital Heroes Training Task [https://digitalheroesco.com](https://digitalheroesco.com)
         </footer>
       </div>
     </Router>
