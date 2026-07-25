@@ -45,3 +45,32 @@ The admin dashboard is protected by a robust authentication system designed for 
 **1. Clone the repository**
 ```bash
  https://github.com/vedang2247/LeadDesk-Mini.git
+```
+
+
+**2. Setup the Backend**
+Create a `.env` file in the `backend` directory:
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+CLIENT_URL=http://localhost:5173
+```
+Run the server:
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+**3. Setup the Frontend**
+Create a `.env` file in the `frontend` directory:
+```env
+VITE_API_URL=http://localhost:5000
+```
+Run the client:
+```bash
+cd frontend
+npm install
+npm run dev
+```
