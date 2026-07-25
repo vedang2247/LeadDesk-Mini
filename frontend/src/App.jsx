@@ -42,7 +42,13 @@ function App() {
 
         {/* Global Footer */}
         <footer className="w-full border-t border-slate-200 py-4 text-center text-xs text-slate-500 bg-white">
-          Built for Digital Heroes Training Task [https://digitalheroesco.com](https://digitalheroesco.com)
+          <a
+            href="https://digitalheroesco.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Built for Digital Heroes Training Task
+          </a>
         </footer>
       </div>
     </Router>
