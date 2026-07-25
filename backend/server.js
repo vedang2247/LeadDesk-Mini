@@ -5,21 +5,19 @@ require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const app = express();
 
-
 app.use(cors()); 
 app.use(express.json()); 
 app.use(cookieParser());
 
-// ---------------------------------------------------------
-// Route mapping (You will uncomment these as you build them)
-// ---------------------------------------------------------
-// const authRoutes = require('./routes/authRoutes');
-// const leadRoutes = require('./routes/leadRoutes');
 
-// app.use('/api/auth', authRoutes);
-// app.use('/api/leads', leadRoutes);
+const authRoutes = require('./routes/authRoutes'); 
+const leadRoutes = require('./routes/leadRoutes');
 
-// A simple health check route to verify the server is up
+
+app.use('/api/auth', authRoutes);
+app.use('/api/leads', leadRoutes);
+
+
 app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'LeadDesk Mini API is running!' });
 });

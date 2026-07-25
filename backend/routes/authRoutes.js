@@ -30,7 +30,6 @@ router.post('/register', async (req, res) => {
     }
 });
 
-
 router.post('/login', async (req, res) => {
     try {
         const body = req.body;
@@ -49,12 +48,22 @@ router.post('/login', async (req, res) => {
             { expiresIn: '24h' }
         );
         
-        return res.status(200).json({ msg: "Login successful", token: token });
+        res.cookie('token', token, {
+            httpOnly: true, // Prevents client-side JS from reading the cookie
+            maxAge: 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+        });
+        
+        return res.status(200).json({ msg: "Login successful" });
     } 
     catch (err) {
         console.error("DB Error!", err);
         return res.status(500).json({ msg: "Database Error!" });
     }
+});
+
+router.post('/logout', (req, res) => {
+    res.clearCookie('token');
+    return res.status(200).json({ msg: "Logged out successfully" });
 });
 
 module.exports = router;
